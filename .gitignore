@@ -70,7 +70,10 @@ Temporary Items
 .apdisk
 
 # Secret runtime configuration.
-/secrets.js
+/config/local*.yml
+
+# Template for the secret runtime configuration.
+!/config/local.template.yml
 
 # Build artifacts.
 /dist

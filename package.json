@@ -27,11 +27,13 @@
   "homepage": "https://github.com/paulmelnikow/apod-slack-lambda#readme",
   "devDependencies": {
     "bodylabs-javascript-style": "^5.0.0",
+    "config": "^1.20.3",
     "del": "^2.2.0",
     "eslint": "^2.10.2",
     "gulp": "^3.9.1",
     "gulp-install": "^0.6.0",
     "gulp-zip": "^3.2.0",
+    "js-yaml": "^3.6.1",
     "jscs": "^2.11.0",
     "node-aws-lambda": "^0.1.8",
     "node-aws-lambda-scheduler": "^1.0.1",

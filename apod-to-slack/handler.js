@@ -3,13 +3,17 @@ const Slack = require('slack-node');
 
 const apodToSlack = require('./apod-to-slack');
 
-const secrets = require('../secrets');
+// At deploy time, the `config` step validates the runtime config and
+// generates `runtime-config.json`, which is packed into the code bundle.
+//
+// This is mainly to exclude the deploy configuration from the code bundle.
+const config = require('../runtime-config.json');
 
 module.exports.handler = (event, context, callback) => {
-    const apodClient = new apod.Client({ apiKey: secrets.nasaApiKey });
+    const apodClient = new apod.Client({ apiKey: config.nasa.apiKey });
 
     const slackClient = new Slack();
-    slackClient.setWebhook(secrets.slackUri);
+    slackClient.setWebhook(config.slack.webhookUri);
 
     apodToSlack(apodClient, slackClient)
         .then(callback)

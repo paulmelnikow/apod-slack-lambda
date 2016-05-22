@@ -26,14 +26,14 @@ Deployment
 1. Clone this repository.
 2. Set up your AWS credentials in `~/.aws/credentials`, if you haven't already.
 3. If necessary, [create an IAM role for Lambda execution][IAM role].
-4. Configure your Lambda execution IAM role in `./lambda-config.js`.
-5. Optional: Adjust the ScheduleExpression in `./lambda-config.js`.
+4. Configure your Lambda execution IAM role in `config/default.yml`.
+5. Optional: Adjust the ScheduleExpression in `config.default.yml`.
 6. Configure an incoming webhook integration in Slack. Copy
-   `./secrets.template.js` to `./secrets.js`, which is gitignored, and
-   fill it in.
+   `./config/local.template.yml` to `./config/local.yml`, which is gitignored,
+   and fill it in.
 7. Optional: To avoid rate limits with NASA's demo key,
    [obtain your own NASA API key][NASA API key] and configure it in
-    `./secrets.js`.
+    `./config/local.yml`.
 8. Deploy: `node_modules/.bin/gulp deploy`
 
 [IAM role]: http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html#roles-creatingrole-service-console
