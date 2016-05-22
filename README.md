@@ -7,13 +7,17 @@ little help from [AWS Lambda][].
 I created this to learn how to use Lambda to schedule a simple task. I wanted
 the configuration to live in version control, and the whole thing to be
 deployed automatically, so I decided to use ThoughtWorks Studios' nice library
-[node-aws-lambda][]. I added my own deploy functionality to support automated
-configuration of [Lambda functions with scheduled events][scheduled].
+[node-aws-lambda][].
+
+I added functionality to automatically configure
+[Lambda functions with scheduled events][schedule], which I later moved into
+its own package, [node-aws-lambda-scheduler][].
 
 [APOD]: http://apod.nasa.gov/apod/astropix.html
 [AWS Lambda]: https://aws.amazon.com/lambda/
 [node-aws-lambda]: https://github.com/ThoughtWorksStudios/node-aws-lambda
-[scheduled]: http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/RunLambdaSchedule.html
+[schedule]: http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/RunLambdaSchedule.html
+[node-aws-lambda-scheduler]: https://github.com/paulmelnikow/node-aws-lambda-scheduler
 
 
 Deployment
