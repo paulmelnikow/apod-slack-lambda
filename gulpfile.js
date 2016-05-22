@@ -15,9 +15,8 @@ gulp.task('clean', function () {
 
 gulp.task('js', function () {
     return gulp.src([
-            'apod-to-slack/handler.js',
             'secrets.js',
-            'apod-to-slack/apod-to-slack.js',
+            'apod-to-slack/*.js',
         ], { base: '.' })
         .pipe(gulp.dest('dist/'));
 });
