@@ -34,11 +34,11 @@
     "gulp-zip": "^3.2.0",
     "jscs": "^2.11.0",
     "node-aws-lambda": "^0.1.8",
+    "node-aws-lambda-scheduler": "^1.0.1",
     "run-sequence": "^1.2.0"
   },
   "dependencies": {
     "nasa-apod": "^0.1.1",
-    "node-aws-lambda-scheduler": "^1.0.0",
     "pify": "^2.3.0",
     "slack-node": "^0.2.0",
     "underscore": "^1.8.3"
