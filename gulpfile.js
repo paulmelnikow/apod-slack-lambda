@@ -6,9 +6,8 @@ const zip = require('gulp-zip');
 const del = require('del');
 const install = require('gulp-install');
 const runSequence = require('run-sequence');
-const awsLambda = require('node-aws-lambda');
-const pify = require('pify');
-const cloudWatchEventSource = require('./cloud-watch-event-source');
+const awsLambdaDeploy = require('pify')(require('node-aws-lambda').deploy);
+const LambdaScheduler = require('node-aws-lambda-scheduler').LambdaScheduler;
 
 gulp.task('clean', function () {
     return del(['./dist', './dist.zip']);
@@ -34,19 +33,15 @@ gulp.task('zip', function () {
 gulp.task('upload', function (callback) {
     const lambdaConfig = require('./lambda-config');
 
-    pify(awsLambda.deploy)('./dist.zip', lambdaConfig)
-        .then(function () {
-            return cloudWatchEventSource.update(
-                { region: lambdaConfig.region },
-                lambdaConfig.cloudWatchEvent);
-        })
-        .then(function () {
-            return cloudWatchEventSource.addRule(
-                { region: lambdaConfig.region },
-                { region: lambdaConfig.region },
-                lambdaConfig.cloudWatchEvent.Name,
-                lambdaConfig.functionName);
-        })
+    const lambdaScheduler = new LambdaScheduler({
+        region: lambdaConfig.region,
+        functionName: lambdaConfig.functionName,
+        ruleName: lambdaConfig.cloudWatchEvent.Name,
+        scheduleExpression: lambdaConfig.cloudWatchEvent.ScheduleExpression,
+    });
+
+    awsLambdaDeploy('./dist.zip', lambdaConfig)
+        .then(() => lambdaScheduler.schedule)
         .then(function () {
             console.log('done');
 

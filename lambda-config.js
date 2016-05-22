@@ -10,7 +10,7 @@ module.exports = {
     cloudWatchEvent: {
         Name: '10am',
         // http://docs.aws.amazon.com/lambda/latest/dg/tutorial-scheduled-events-schedule-expressions.html
-        ScheduleExpression: 'cron(0 15 * * ? *)',
+        ScheduleExpression: 'cron(0 13 * * ? *)',
         // ScheduleExpression: 'rate(5 minutes)',
     },
 };

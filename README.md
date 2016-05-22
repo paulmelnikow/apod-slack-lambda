@@ -30,7 +30,7 @@ Deployment
 7. Optional: To avoid rate limits with NASA's demo key,
    [obtain your own NASA API key][NASA API key] and configure it in
     `./secrets.js`.
-8. Deploy: `gulp`
+8. Deploy: `node_modules/.bin/gulp deploy`
 
 [IAM role]: http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html#roles-creatingrole-service-console
 [NASA API key]: https://api.nasa.gov/

@@ -1,6 +1,6 @@
 {
   "name": "apod-slack-lambda",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The Astronomy Picture of the Day via Slack, with a little help from AWS Lambda",
   "main": "index.js",
   "scripts": {
@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "nasa-apod": "^0.1.1",
+    "node-aws-lambda-scheduler": "^1.0.0",
     "pify": "^2.3.0",
     "slack-node": "^0.2.0",
     "underscore": "^1.8.3"
