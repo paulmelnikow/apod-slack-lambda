@@ -3,7 +3,7 @@ const Slack = require('slack-node');
 
 const apodToSlack = require('./apod-to-slack');
 
-const secrets = require('./secrets');
+const secrets = require('../secrets');
 
 module.exports.handler = (event, context, callback) => {
     const apodClient = new apod.Client({ apiKey: secrets.nasaApiKey });

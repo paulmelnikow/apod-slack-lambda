@@ -14,7 +14,11 @@ gulp.task('clean', function () {
 });
 
 gulp.task('js', function () {
-    return gulp.src(['index.js', 'secrets.js', 'cloud-watch-event-source.js', 'apod-to-slack.js'])
+    return gulp.src([
+            'apod-to-slack/handler.js',
+            'secrets.js',
+            'apod-to-slack/apod-to-slack.js',
+        ], { base: '.' })
         .pipe(gulp.dest('dist/'));
 });
 
@@ -41,12 +45,8 @@ gulp.task('upload', function (callback) {
     });
 
     awsLambdaDeploy('./dist.zip', lambdaConfig)
-        .then(() => lambdaScheduler.schedule)
-        .then(function () {
-            console.log('done');
-
-            callback();
-        })
+        .then(() => lambdaScheduler.schedule())
+        .then(callback)
         .catch(callback);
 });
 

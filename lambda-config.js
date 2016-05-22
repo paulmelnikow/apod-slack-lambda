@@ -1,6 +1,6 @@
 module.exports = {
     region: 'us-west-2',
-    handler: 'index.handler',
+    handler: 'apod-to-slack/handler.handler',
     role: 'arn:aws:iam::264010187327:role/LambdaExecution',
     functionName: 'ApodSlack',
     timeout: 10,
@@ -12,5 +12,6 @@ module.exports = {
         // http://docs.aws.amazon.com/lambda/latest/dg/tutorial-scheduled-events-schedule-expressions.html
         ScheduleExpression: 'cron(0 13 * * ? *)',
         // ScheduleExpression: 'rate(5 minutes)',
+        // ScheduleExpression: 'rate(1 minute)',
     },
 };
