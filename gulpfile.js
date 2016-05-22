@@ -48,7 +48,7 @@ gulp.task('upload', function (callback) {
                 lambdaConfig.functionName);
         })
         .then(function () {
-            console.log('done')
+            console.log('done');
 
             callback();
         })
