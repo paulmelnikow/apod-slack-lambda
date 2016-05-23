@@ -1,0 +1,10 @@
+machine:
+  node:
+    # For parity with AWS Lambda's recommended execution environment.
+    version: 4.3.0
+
+deployment:
+ production:
+   branch: master
+   commands:
+     - NODE_ENV=production gulp deploy

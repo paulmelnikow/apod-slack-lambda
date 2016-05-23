@@ -1,10 +1,4 @@
-# This is the configuration file for apod-slack-lambda. You can override these
-# settings in `local.yml`. If you If you want separate configurations for
-# production and test, you can create e.g. `test.yml` and `local-test.yml`.
-# To get those settings, set `NODE_ENV=test` when deploying.
-#
-# More details:
-# https://github.com/lorenwest/node-config/wiki/Configuration-Files#file-load-order
+
 
 # The AWS region used to deploy the Lambda function and to set up the
 # CloudWatch Event and event target. Set this to whatever you wish.
@@ -20,40 +14,37 @@ region: 'us-west-2'
 handler: 'apod-to-slack/handler.handler'
 
 schedule:
-    # A descriptive and unique name, which will appear in the AWS console.
-    name: '10am'
+  # A descriptive and unique name, which will appear in the AWS console.
+  name: '10am'
 
-    # `cron(0 13 * * ? *)` means daily at 13:00 GMT / 9 a.m. EDT.
-    #
-    # Reference:
-    # http://docs.aws.amazon.com/lambda/latest/dg/tutorial-scheduled-events-schedule-expressions.html
-    expression: 'cron(0 13 * * ? *)'
+  # `cron(0 13 * * ? *)` means daily at 13:00 GMT / 9 a.m. EDT.
+  #
+  # Reference:
+  # http://docs.aws.amazon.com/lambda/latest/dg/tutorial-scheduled-events-schedule-expressions.html
+  expression: 'cron(0 13 * * ? *)'
 
 lambda:
-    # The name of the Lambda function to create.
-    functionName: 'ApodSlack'
+  # The name of the Lambda function to create.
+  functionName: 'ApodSlack'
 
-    # The Lambda execution role for your account. You'll need to create one of
-    # these for your own AWS account. This one is on my account and won't work
-    # for you.
-    #
-    # Instructions:
-    # http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html#roles-creatingrole-service-console
-    role: 'arn:aws:iam::264010187327:role/LambdaExecution'
+  # The Lambda execution role for your account. You'll need to create one of
+  # these for your own AWS account. This one is on my account and won't work
+  # for you.
+  #
+  # Instructions:
+  # http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html#roles-creatingrole-service-console
+  role: 'arn:aws:iam::264010187327:role/LambdaExecution'
 
-    # The execution environment for the Lambda function.
-    execution:
-        runtime: 'nodejs4.3'
-        timeoutSeconds: 10
-        memorySizeMB: 128
+  # The execution environment for the Lambda function.
+  execution:
+    runtime: 'nodejs4.3'
+    timeoutSeconds: 10
+    memorySizeMB: 128
 
 nasa:
-    # The NASA API key for APOD. This is NASA's "demo" key, which you can use
-    # for a limited number of requests.
-    #
-    # To avoid rate limits, sign up for your own API key.
-    #
-    # It's a good practice not to check secrets into revision control. So, set
-    # them in `local.yml`, which takes precedence over this file, and is not
-    # checked in.
-    apiKey: 'DEMO_KEY'
+  # The NASA API key for APOD. This is NASA's "demo" key, which you can use
+  # for a limited number of requests.
+  #
+  # To avoid rate limits, sign up for your own API key. Don't enter it here.
+  # Enter it in `local.yml` instead.
+  apiKey: 'DEMO_KEY'
