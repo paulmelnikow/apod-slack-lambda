@@ -35,7 +35,7 @@
     "gulp-zip": "^3.2.0",
     "js-yaml": "^3.6.1",
     "node-aws-lambda": "^0.1.8",
-    "node-aws-lambda-scheduler": "^1.0.1",
+    "node-aws-lambda-scheduler": "^1.0.4",
     "run-sequence": "^1.2.0"
   },
   "dependencies": {
