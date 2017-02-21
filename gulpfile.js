@@ -66,18 +66,16 @@ gulp.task('upload', function (callback) {
   };
 
   lambdaDeploy('./dist.zip', lambdaDeployConfig)
-        .then(() => lambdaScheduler.schedule())
-        .then(callback)
-        .catch(callback);
+    .then(() => lambdaScheduler.schedule())
+    .then(callback)
+    .catch(callback);
 });
 
-gulp.task('deploy', function (callback) {
-  return runSequence(
-        ['clean'],
-        ['js', 'node-mods'],
-        ['config'],
-        ['zip'],
-        ['upload'],
-        callback
-    );
-});
+gulp.task('deploy', callback => runSequence(
+  ['clean'],
+  ['js', 'node-mods'],
+  ['config'],
+  ['zip'],
+  ['upload'],
+  callback
+));
