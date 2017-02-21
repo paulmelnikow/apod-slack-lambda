@@ -4,9 +4,7 @@
   "description": "The Astronomy Picture of the Day via Slack, with a little help from AWS Lambda",
   "main": "index.js",
   "scripts": {
-    "jscs": "jscs --config node_modules/bodylabs-javascript-style/jscs/jscsrc-shared *.js",
-    "eslint": "eslint --config node_modules/bodylabs-javascript-style/eslint/eslintrc-shared.yml '*.js'",
-    "lint": "npm run jscs && npm run eslint",
+    "lint": "eslint '**/*.js'",
     "test": "npm run lint"
   },
   "repository": {
@@ -26,15 +24,14 @@
   },
   "homepage": "https://github.com/paulmelnikow/apod-slack-lambda#readme",
   "devDependencies": {
-    "bodylabs-javascript-style": "^5.0.0",
     "config": "^1.20.3",
     "del": "^2.2.0",
-    "eslint": "^2.10.2",
+    "eslint": "^3.16.0",
+    "eslint-plugin-pnm": "^1.0.0",
     "gulp": "^3.9.1",
     "gulp-install": "^0.6.0",
     "gulp-zip": "^3.2.0",
     "js-yaml": "^3.6.1",
-    "jscs": "^2.11.0",
     "node-aws-lambda": "^0.1.8",
     "node-aws-lambda-scheduler": "^1.0.1",
     "run-sequence": "^1.2.0"

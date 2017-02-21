@@ -1,3 +1,5 @@
+'use strict';
+
 const apod = require('nasa-apod');
 const Slack = require('slack-node');
 
@@ -10,17 +12,17 @@ const apodToSlack = require('./apod-to-slack');
 const config = require('../runtime-config.json');
 
 module.exports.handler = (event, context, callback) => {
-    const apodClient = new apod.Client({ apiKey: config.nasa.apiKey });
+  const apodClient = new apod.Client({ apiKey: config.nasa.apiKey });
 
-    const slackClient = new Slack();
-    slackClient.setWebhook(config.slack.webhookUri);
+  const slackClient = new Slack();
+  slackClient.setWebhook(config.slack.webhookUri);
 
-    apodToSlack(apodClient, slackClient)
-        .then(callback)
-        .catch(function (err) {
-            console.log(err);
-            console.log(err.stack);
+  apodToSlack(apodClient, slackClient)
+    .then(callback)
+    .catch(function (err) {
+      console.log(err);
+      console.log(err.stack);
 
-            callback(err);
-        });
+      callback(err);
+    });
 };

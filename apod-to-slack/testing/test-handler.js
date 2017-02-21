@@ -1,3 +1,5 @@
+'use strict';
+
 const handler = require('./index').handler;
 
 handler(null, null, function () {});
