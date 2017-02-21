@@ -30,10 +30,8 @@ gulp.task('node-mods', function () {
 });
 
 gulp.task('config', function (done) {
-    var runtimeConfig = {
-        nasa: { apiKey: config.get('nasa.apiKey') },
-        slack: { webhookUri: config.get('slack.webhookUri') },
-    };
+    // TODO Provide a way to validate the config.
+    var runtimeConfig = config.get('runtime');
 
     fs.writeFile(
         'dist/runtime-config.json',

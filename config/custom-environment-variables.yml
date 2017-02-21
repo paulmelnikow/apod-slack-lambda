@@ -1,8 +1,8 @@
 # If these environment variables are set, they have precedence over everything
 # else.
 
-nasa:
-  apiKey: 'NASA_API_KEY'
-
-slack:
-  webhookUri: 'SLACK_WEBHOOK_URI'
+runtime:
+  nasa:
+    apiKey: 'NASA_API_KEY'
+  slack:
+    webhookUri: 'SLACK_WEBHOOK_URI'

@@ -41,10 +41,13 @@ lambda:
     timeoutSeconds: 10
     memorySizeMB: 128
 
-nasa:
-  # The NASA API key for APOD. This is NASA's "demo" key, which you can use
-  # for a limited number of requests.
-  #
-  # To avoid rate limits, sign up for your own API key. Don't enter it here.
-  # Enter it in `local.yml` instead.
-  apiKey: 'DEMO_KEY'
+# At build time, the runtime config is validated and shipped inside the Lambda
+# bundle.
+runtime:
+  nasa:
+    # The NASA API key for APOD. This is NASA's "demo" key, which you can use
+    # for a limited number of requests.
+    #
+    # To avoid rate limits, sign up for your own API key. Don't enter it here.
+    # Enter it in `local.yml` instead.
+    apiKey: 'DEMO_KEY'

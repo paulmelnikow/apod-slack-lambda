@@ -1,7 +1,7 @@
 # Copy this file to `config/local.yml` and fill it in! It will be gitignored.
 
-nasa:
-  apiKey: '...'
-
-slack:
-  webhookUri: 'https://hooks.slack.com/services/...'
+runtime:
+  nasa:
+    apiKey: '...'
+  slack:
+    webhookUri: 'https://hooks.slack.com/services/...'
