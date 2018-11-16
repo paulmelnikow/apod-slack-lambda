@@ -27,7 +27,7 @@
     "aws-sdk": "^2.16.0",
     "config": "^2.0.1",
     "del": "^3.0.0",
-    "eslint": "^2.13.1",
+    "eslint": "^4.19.1",
     "eslint-plugin-mocha": "^4.8.0",
     "eslint-plugin-pnm": "^1.0.0",
     "gulp": "^3.9.1",
