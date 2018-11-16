@@ -37,7 +37,7 @@ lambda:
 
   # The execution environment for the Lambda function.
   execution:
-    runtime: 'nodejs4.3'
+    runtime: 'nodejs8.10'
     timeoutSeconds: 10
     memorySizeMB: 128
 
