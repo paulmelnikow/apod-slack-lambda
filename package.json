@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "nasa-apod": "^0.1.1",
-    "pify": "^2.3.0",
+    "pify": "^4.0.1",
     "slack-node": "^0.2.0",
     "underscore": "^1.8.3"
   }
