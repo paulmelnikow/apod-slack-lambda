@@ -8,7 +8,6 @@ const gulp = require('gulp')
 const zip = require('gulp-zip')
 const del = require('del')
 const install = require('gulp-install')
-const runSequence = require('run-sequence')
 const lambdaDeploy = require('pify')(require('node-aws-lambda').deploy)
 const LambdaScheduler = require('node-aws-lambda-scheduler').LambdaScheduler
 
@@ -71,11 +70,4 @@ gulp.task('upload', function (callback) {
     .catch(callback)
 })
 
-gulp.task('deploy', callback => runSequence(
-  ['clean'],
-  ['js', 'node-mods'],
-  ['config'],
-  ['zip'],
-  ['upload'],
-  callback
-))
+gulp.task('deploy', gulp.series('clean', 'js', 'node-mods', 'config', 'zip', 'upload'))

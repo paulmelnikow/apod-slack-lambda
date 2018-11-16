@@ -30,13 +30,12 @@
     "eslint": "^4.19.1",
     "eslint-plugin-mocha": "^5.2.0",
     "eslint-plugin-pnm": "^2.0.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-install": "^1.1.0",
     "gulp-zip": "^4.2.0",
     "js-yaml": "^3.6.1",
     "node-aws-lambda": "^0.1.8",
-    "node-aws-lambda-scheduler": "^1.0.4",
-    "run-sequence": "^2.2.1"
+    "node-aws-lambda-scheduler": "^1.0.4"
   },
   "dependencies": {
     "nasa-apod": "^0.1.1",
