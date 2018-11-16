@@ -36,7 +36,7 @@
     "js-yaml": "^3.6.1",
     "node-aws-lambda": "^0.1.8",
     "node-aws-lambda-scheduler": "^1.0.4",
-    "run-sequence": "^1.2.0"
+    "run-sequence": "^2.2.1"
   },
   "dependencies": {
     "nasa-apod": "^0.1.1",
