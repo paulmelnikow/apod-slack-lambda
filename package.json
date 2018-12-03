@@ -1,16 +1,19 @@
 {
   "name": "apod-slack-lambda",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The Astronomy Picture of the Day via Slack, with a little help from AWS Lambda",
   "main": "index.js",
   "scripts": {
     "lint": "eslint '**/*.js'",
     "test": "npm run lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/paulmelnikow/apod-slack-lambda.git"
-  },
+  "files": [
+    "**/*.js",
+    "/config",
+    "/apod-to-slack",
+    "!dist"
+  ],
+  "repository": "paulmelnikow/apod-slack-lambda",
   "keywords": [
     "apod",
     "slack",
@@ -19,10 +22,6 @@
   ],
   "author": "Paul Melnikow",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/paulmelnikow/apod-slack-lambda/issues"
-  },
-  "homepage": "https://github.com/paulmelnikow/apod-slack-lambda#readme",
   "devDependencies": {
     "aws-sdk": "^2.16.0",
     "config": "^3.0.0",
