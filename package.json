@@ -25,7 +25,7 @@
   "homepage": "https://github.com/paulmelnikow/apod-slack-lambda#readme",
   "devDependencies": {
     "aws-sdk": "^2.16.0",
-    "config": "^2.0.1",
+    "config": "^3.0.0",
     "del": "^3.0.0",
     "eslint": "^4.19.1",
     "eslint-plugin-mocha": "^5.2.0",
