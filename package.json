@@ -38,7 +38,7 @@
     "node-aws-lambda-scheduler": "^1.0.4"
   },
   "dependencies": {
-    "nasa-apod": "^0.1.1",
+    "nasa-apod": "^0.2.0",
     "pify": "^4.0.1",
     "slack-node": "^0.2.0",
     "underscore": "^1.8.3"
