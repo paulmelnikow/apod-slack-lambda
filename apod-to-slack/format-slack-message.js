@@ -4,7 +4,7 @@ const makeApodUri = dateString => {
   // 2016-05-11 -> http://apod.nasa.gov/apod/ap160511.html
   const cleanedDate = dateString.slice(2).replace(/-/g, '')
 
-  return 'http://apod.nasa.gov/apod/ap' + cleanedDate + '.html'
+  return `http://apod.nasa.gov/apod/ap${cleanedDate}.html`
 }
 
 const processVideoUri = videoUri =>
@@ -20,16 +20,15 @@ const processVideoUri = videoUri =>
 const modernize = text => text.replace(/ {2}/g, ' ').replace(/--/g, '\u2013')
 
 const formatSlackMessage = apodData => {
-  const title =
-    "_Today's Astronomy Picture of the Day_\n" + '*' + apodData.title + '*'
+  const title = `_Today's Astronomy Picture of the Day_\n*${apodData.title}*`
 
   let details = [
     modernize(apodData.explanation),
     '',
-    'Read more: ' + makeApodUri(apodData.date),
+    `Read more: ${makeApodUri(apodData.date)}`,
   ]
   if (apodData.copyright) {
-    details = details.concat(['', 'Copyright: ' + apodData.copyright])
+    details = details.concat(['', `Copyright: ${apodData.copyright}`])
   }
   details = details.join('\n')
 
@@ -42,14 +41,14 @@ const formatSlackMessage = apodData => {
     })
     mainText = title
   } else if (apodData.media_type === 'video') {
-    mainText = title + '\n<' + processVideoUri(apodData.url) + '>'
+    mainText = `${title}\n<${processVideoUri(apodData.url)}>`
   }
 
   return {
     username: 'apod',
     icon_emoji: ':milky_way:',
     text: mainText,
-    attachments: attachments,
+    attachments,
   }
 }
 
