@@ -1,5 +1,3 @@
-
-
 # The AWS region used to deploy the Lambda function and to set up the
 # CloudWatch Event and event target. Set this to whatever you wish.
 region: 'us-west-2'

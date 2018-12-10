@@ -10,18 +10,18 @@ const makeApodUri = dateString => {
 const processVideoUri = videoUri =>
   // https://www.youtube.com/embed/8J4LoX3eOWc?rel=0 ->
   // https://www.youtube.com/watch?v=8J4LoX3eOWc
-  videoUri.replace(
-    'https://www.youtube.com/embed/',
-    'https://www.youtube.com/watch?v='
-  ).replace('?rel=0', '')
+  videoUri
+    .replace(
+      'https://www.youtube.com/embed/',
+      'https://www.youtube.com/watch?v='
+    )
+    .replace('?rel=0', '')
 
-const modernize = text => text
-  .replace(/ {2}/g, ' ')
-  .replace(/--/g, '\u2013')
+const modernize = text => text.replace(/ {2}/g, ' ').replace(/--/g, '\u2013')
 
 const formatSlackMessage = apodData => {
-  const title = "_Today's Astronomy Picture of the Day_\n" +
-    '*' + apodData.title + '*'
+  const title =
+    "_Today's Astronomy Picture of the Day_\n" + '*' + apodData.title + '*'
 
   let details = [
     modernize(apodData.explanation),
@@ -29,10 +29,7 @@ const formatSlackMessage = apodData => {
     'Read more: ' + makeApodUri(apodData.date),
   ]
   if (apodData.copyright) {
-    details = details.concat([
-      '',
-      'Copyright: ' + apodData.copyright,
-    ])
+    details = details.concat(['', 'Copyright: ' + apodData.copyright])
   }
   details = details.join('\n')
 

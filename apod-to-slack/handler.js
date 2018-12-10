@@ -19,7 +19,7 @@ module.exports.handler = (event, context, callback) => {
 
   apodToSlack(apodClient, slackClient)
     .then(callback)
-    .catch(function (err) {
+    .catch(function(err) {
       console.log(err)
       console.log(err.stack)
 

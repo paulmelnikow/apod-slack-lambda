@@ -1,5 +1,4 @@
-config
-======
+# config
 
 This folder contains the configuration for `apod-slack-lambda`.
 
